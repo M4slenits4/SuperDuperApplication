@@ -25,7 +25,6 @@ public class Cheese extends Product {
      */
     public Cheese(String label, int quality, Instant expireDate) {
         super(label, quality, expireDate, BASIC_PRICE);
-        updatePrice();
     }
 
     /**
@@ -45,7 +44,8 @@ public class Cheese extends Product {
      * Updates the quality level of the cheese by decreasing it by the
      * {@link #DAILY_QUALITY_DECREMENT}each time this method is called.
      *
-     * @param toDay The current date and time.
+     * @param toDay The current date and time (not directly used in this implementation
+     * but inherited from the {@link Product} interface).
      */
     @Override
     public void updateQualityLevel(Instant toDay) {
