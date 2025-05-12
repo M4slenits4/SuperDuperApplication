@@ -28,7 +28,7 @@ public class CSVProductReader {
      *
      * @param path The path to the CSV file to read.
      */
-    public static void readProductTypesCSV(String path) {
+    public static void getProductTypesFromCSV(String path) {
         try (CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new FileReader(path))) {
             Map<String, String> line;
             while ((line = reader.readMap()) != null) {
@@ -47,7 +47,7 @@ public class CSVProductReader {
      * @param path The path to the CSV file to read.
      * @return A static {@link List} containing all the {@link Product} objects read from the file.
      */
-    public static List<Product> readProductDataCSV(String path) {
+    public static List<Product> getProductDataFromCSV(String path) {
         try (CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new FileReader(path))) {
             Map<String, String> line;
             while ((line = reader.readMap()) != null) {
