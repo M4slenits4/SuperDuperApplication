@@ -25,6 +25,7 @@ public class Cheese extends Product {
      */
     public Cheese(String label, int quality, Instant expireDate) {
         super(label, quality, expireDate, BASIC_PRICE);
+        updatePrice();
     }
 
     /**

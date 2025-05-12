@@ -75,7 +75,6 @@ public class CheeseTest {
         cheese.setQuality(cheese.getQuality() + 10);
         cheese.updatePrice();
         Assertions.assertTrue(cheese.getPrice() > initialPrice);
-
         cheese.setQuality(cheese.getQuality() - 20);
         cheese.updatePrice();
         Assertions.assertTrue(cheese.getPrice() < initialPrice);
