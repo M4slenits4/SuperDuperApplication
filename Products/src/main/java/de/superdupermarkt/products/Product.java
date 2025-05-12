@@ -29,10 +29,10 @@ public abstract class Product {
      * Calculate and round the daily price of a product.
      *
      * @param basicPrice    basic price of the product.
-     * @param quality       the quality of the product.
+     * @param priceValue    Price dependency such as quality to adjust the price.
      */
-    public void calculatePrice(double basicPrice, int quality) {
-        BigDecimal bigDecimal = new BigDecimal(Double.toString(basicPrice + (0.10 * quality)));
+    public void calculatePrice(double basicPrice, int priceValue) {
+        BigDecimal bigDecimal = new BigDecimal(Double.toString(basicPrice + (0.10 * priceValue)));
         BigDecimal roundedPrice = bigDecimal.setScale(2, RoundingMode.HALF_UP);
         setPrice(roundedPrice.doubleValue());
     }
