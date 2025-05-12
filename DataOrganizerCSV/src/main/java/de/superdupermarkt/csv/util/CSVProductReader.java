@@ -54,13 +54,13 @@ public class CSVProductReader {
                 Class<? extends Product> productClass = PRODUCT_TYPES.get(productTyp);
 
                 if (productClass != null) {
-                    if (line.get("Bezeichnung") == null || line.get("Qualitaet") == null || line.get("Verfallsdatum") == null) {
+                    if (line.get("Bezeichnung") == null || line.get("Qualität") == null || line.get("Verfallsdatum") == null) {
                         System.err.println("Mindestens eine erforderliche Spalte ist null in einer Zeile für ProductTyp: " + productTyp);
                         continue;
                     }
                     try {
                         Product product = productClass.getDeclaredConstructor(String.class, int.class, Instant.class)
-                                .newInstance(line.get("Bezeichnung"), Integer.parseInt(line.get("Qualitaet")), Instant.parse(line.get("Verfallsdatum")));
+                                .newInstance(line.get("Bezeichnung"), Integer.parseInt(line.get("Qualität")), Instant.parse(line.get("Verfallsdatum")));
                         PRODUCT_LIST.add(product);
                     } catch (Exception e) {
                         System.err.println("Fehler beim Erstellen von " + productTyp + ": " + e.getMessage());

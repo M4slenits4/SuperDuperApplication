@@ -61,7 +61,7 @@ public class CheeseTest {
     @Test
     public void updateQualityLevel_decreasesQualityDaily() {
         int initialQuality = cheese.getQuality();
-        cheese.updateQualityLevel(now.plus(1, ChronoUnit.DAYS));
+        cheese.updateQualityLevel(now);
         assertEquals(initialQuality - 1, cheese.getQuality());
     }
 

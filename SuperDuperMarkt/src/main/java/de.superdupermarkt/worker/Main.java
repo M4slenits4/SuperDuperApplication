@@ -2,6 +2,8 @@ package de.superdupermarkt.worker;
 
 import de.superdupermarkt.csv.util.CSVProductReader;
 import de.superdupermarkt.products.Product;
+
+import java.io.File;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
@@ -11,11 +13,11 @@ public class Main {
     /** Message line separator. */
     private static final String LINE_SEPARATOR = "-------------------------------------------------------";
     /** The file path to the CSV files. */
-    private static final String BASE_PATH = "C:\\Users\\jonas\\IdeaProjects\\SuperDuperApplication\\SuperDuperMarkt\\src\\main\\java\\de.superdupermarkt\\files\\";
+    private static final String BASE_PATH = new File("SuperDuperMarkt/src/main/java/de.superdupermarkt/files").getAbsolutePath();
     /** The file name of the CSV file containing the product types. */
-    private static final String FILE_NAME_PRODUCT_TYPES = BASE_PATH + "ProductTypes.csv";
+    private static final String FILE_NAME_PRODUCT_TYPES = BASE_PATH + "/ProductTypes.csv";
     /** The file name of the CSV file containing the product data. */
-    public static final String FILE_NAME_PRODUCT_DATA = BASE_PATH + "ProductData.csv";
+    public static final String FILE_NAME_PRODUCT_DATA = BASE_PATH + "/ProductData.csv";
 
     public static void main(String[] args){
 
@@ -24,14 +26,11 @@ public class Main {
         // read in product types and product list
         CSVProductReader.getProductTypesFromCSV(FILE_NAME_PRODUCT_TYPES);
         List<Product> productList = CSVProductReader.getProductDataFromCSV(FILE_NAME_PRODUCT_DATA);
-        if (productList == null || productList.isEmpty()) {
-            System.out.println("Fehler beim Einlesen oder ProductData.csv ist leer !");
-        }
 
         // start
         System.out.println("Startwerte des Programmes");
         System.out.println(LINE_SEPARATOR);
-            productList.forEach(f -> System.out.println(f.getProductDetails()));
+            productList.forEach(System.out::println);
 
         for (int anzahlTage = 0; anzahlTage < 150; anzahlTage++) {
 
@@ -42,7 +41,7 @@ public class Main {
             for (Product product : productList) {
                 product.updatePrice();
                 product.updateQualityLevel(startTime);
-                productInfos = new StringBuilder(product.getProductDetails());
+                productInfos = new StringBuilder(product.toString());
                 // Check the quality level and expiration date of the product.
                 if (!product.checkQualityLevel() || product.isExpired(startTime)) {
                     productInfos.append(" ! Muss ausgeräumt werden !");

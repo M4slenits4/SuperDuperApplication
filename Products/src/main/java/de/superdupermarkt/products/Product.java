@@ -40,7 +40,8 @@ public abstract class Product {
     /**
      * Get out all needed product details of the product.
      */
-    public String getProductDetails() {
+    @Override
+    public String toString() {
         return "Bezeichnung: " + getLabel() + ", Preis: " + getPrice() + ", Qualität: " + getQuality();
     }
 
