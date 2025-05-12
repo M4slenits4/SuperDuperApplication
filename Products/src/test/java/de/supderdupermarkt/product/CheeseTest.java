@@ -111,5 +111,4 @@ public class CheeseTest {
         Cheese expiredCheese = new Cheese("Cheddar", 70, pastDate);
         assertTrue(expiredCheese.isExpired(now));
     }
-
 }

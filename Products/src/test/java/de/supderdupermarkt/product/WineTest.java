@@ -3,12 +3,11 @@ package de.supderdupermarkt.product;
 import static org.junit.jupiter.api.Assertions.*;
 
 import de.superdupermarkt.products.Wine;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Junit tests for {@link WineTest} class.
@@ -123,5 +122,4 @@ public class WineTest {
         assertFalse(wine.isExpired(expiryDate.plus(42, ChronoUnit.DAYS)));
         assertFalse(wine.isExpired(expiryDate.minus(42, ChronoUnit.DAYS)));
     }
-
 }

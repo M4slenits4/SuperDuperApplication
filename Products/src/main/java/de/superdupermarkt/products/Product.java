@@ -1,12 +1,11 @@
 package de.superdupermarkt.products;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Instant;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The abstract class {@code Product} defines the basic properties and capabilities

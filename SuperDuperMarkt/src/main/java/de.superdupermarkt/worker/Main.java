@@ -3,7 +3,6 @@ package de.superdupermarkt.worker;
 
 import de.superdupermarkt.csv.util.CSVProductReader;
 import de.superdupermarkt.products.Product;
-
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
