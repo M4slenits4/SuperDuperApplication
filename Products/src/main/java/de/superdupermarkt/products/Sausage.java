@@ -2,6 +2,10 @@ package de.superdupermarkt.products;
 
 import java.time.Instant;
 
+/**
+ * The class {@code Sausage} extends the abstract class {@code Product} and represents the
+ * Sausage product type. It implements the behavior of sausage.
+ */
 public class Sausage extends Product {
 
     /** The basic price of the sausage. */
