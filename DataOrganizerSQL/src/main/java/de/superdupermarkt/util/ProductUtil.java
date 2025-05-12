@@ -10,12 +10,20 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 
+/** Utility class for operations related to product data. */
 @AllArgsConstructor
 @Component
 public class ProductUtil {
 
     private ProductService productService;
 
+    /**
+     * Retrieves product data from the SQL database and transforms it into a list of specific product implementation classes.
+     * For each {@link Product} entity fetched from the database, this method attempts to instantiate the corresponding
+     * concrete product class based on the product's label.
+     *
+     * @return A list of concrete {@link de.superdupermarkt.products.Product} objects populated with data from the SQL database.
+     */
     private List<de.superdupermarkt.products.Product> getProductDataFromSQL() {
 
         List<Product> allProducts = productService.getAllProducts();
