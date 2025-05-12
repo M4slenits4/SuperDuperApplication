@@ -32,7 +32,7 @@ public enum ProductTyp {
      * @return The fully qualified class path of the corresponding product type,
      * or {@code null} if no product type with the given label is found.
      */
-    public static Class getClassPathByLabel(String label) {
+    public static Class getClassByLabel(String label) {
         for (ProductTyp type : ProductTyp.values()) {
             if (type.bezeichnung.equalsIgnoreCase(label)) {
                 return type.clazz;
