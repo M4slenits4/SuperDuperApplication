@@ -31,7 +31,7 @@ public class ProductUtil {
 
         allProducts.forEach( e -> {
             try {
-                Class<? extends de.superdupermarkt.products.Product> productClass = (Class<? extends de.superdupermarkt.products.Product>) Class.forName(ProductTyp.getClassPathByLabel(e.getLabel()));
+                Class<de.superdupermarkt.products.Product> productClass = (Class<de.superdupermarkt.products.Product>) Class.forName(ProductTyp.getClassPathByLabel(e.getLabel()));
                 de.superdupermarkt.products.Product product = productClass.getDeclaredConstructor(String.class, int.class, Instant.class)
                         .newInstance(e.getLabel(), e.getQuality(), e.getExpireDate());
                 productList.add(product);

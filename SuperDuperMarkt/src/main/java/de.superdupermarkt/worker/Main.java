@@ -26,6 +26,9 @@ public class Main {
         // read in product types and product list
         CSVProductReader.getProductTypesFromCSV(FILE_NAME_PRODUCT_TYPES);
         List<Product> productList = CSVProductReader.getProductDataFromCSV(FILE_NAME_PRODUCT_DATA);
+        if (productList.isEmpty()) {
+            System.out.println(" Produkt-Liste ist leer !");
+        }
 
         // start
         System.out.println("Startwerte des Programmes");

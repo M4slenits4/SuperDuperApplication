@@ -13,9 +13,9 @@ public enum ProductTyp {
     /** Represents the 'Cheese' product type. */
     CHEESE("Cheese", "de.superdupermarkt.products.Cheese"),
     /** Represents the 'Wine' product type. */
-    Wine("Wine", "de.superdupermarkt.products.Wine"),
+    WINE("Wine", "de.superdupermarkt.products.Wine"),
     /** Represents the 'Sausage' product type. */
-    Wurst("Sausage", "de.superdupermarkt.products.Sausage");
+    SAUSAGE("Sausage", "de.superdupermarkt.products.Sausage");
 
     /** The label of the product type. */
     private final String bezeichnung;

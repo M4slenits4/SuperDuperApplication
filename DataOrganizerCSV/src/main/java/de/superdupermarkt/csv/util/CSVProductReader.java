@@ -31,7 +31,7 @@ public class CSVProductReader {
         try (CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new FileReader(path))) {
             Map<String, String> line;
             while ((line = reader.readMap()) != null) {
-                PRODUCT_TYPES.put(line.get("Typ"), (Class<? extends Product>) Class.forName(line.get("Klassenpfad")));
+                PRODUCT_TYPES.put(line.get("Typ"), (Class<de.superdupermarkt.products.Product>) Class.forName(line.get("Klassenpfad")));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
