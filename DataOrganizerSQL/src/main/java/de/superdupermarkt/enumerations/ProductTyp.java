@@ -1,5 +1,8 @@
 package de.superdupermarkt.enumerations;
 
+import de.superdupermarkt.products.Cheese;
+import de.superdupermarkt.products.Sausage;
+import de.superdupermarkt.products.Wine;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -11,16 +14,16 @@ import lombok.ToString;
 public enum ProductTyp {
 
     /** Represents the 'Cheese' product type. */
-    CHEESE("Cheese", "de.superdupermarkt.products.Cheese"),
+    CHEESE("Cheese", Cheese.class),
     /** Represents the 'Wine' product type. */
-    WINE("Wine", "de.superdupermarkt.products.Wine"),
+    WINE("Wine", Wine.class),
     /** Represents the 'Sausage' product type. */
-    SAUSAGE("Sausage", "de.superdupermarkt.products.Sausage");
+    SAUSAGE("Sausage", Sausage.class);
 
     /** The label of the product type. */
     private final String bezeichnung;
     /** The fully qualified class path of the Java class that implements this product type. */
-    private final String classPath;
+    private final Class<?> clazz;
 
     /**
      * Retrieves the fully qualified class path associated with the given product type label.
@@ -29,10 +32,10 @@ public enum ProductTyp {
      * @return The fully qualified class path of the corresponding product type,
      * or {@code null} if no product type with the given label is found.
      */
-    public static String getClassPathByLabel(String label) {
+    public static Class getClassPathByLabel(String label) {
         for (ProductTyp type : ProductTyp.values()) {
             if (type.bezeichnung.equalsIgnoreCase(label)) {
-                return type.classPath;
+                return type.clazz;
             }
         }
         return null;

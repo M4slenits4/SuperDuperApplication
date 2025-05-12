@@ -3,6 +3,8 @@ package de.superdupermarkt.products;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Instant;
+
+import de.superdupermarkt.enumerations.ProductTyp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -71,4 +73,17 @@ public abstract class Product {
      * @return {@code true} if the product is expired, otherwise {@code false}
      */
     public abstract boolean isExpired(Instant today);
+
+
+    public static Product create(String label, int quality, Instant expireDate) {
+        try {
+            Class<? extends Product> productClass = ProductTyp.getClassPathByLabel(label);
+            assert productClass != null;
+            return productClass.getDeclaredConstructor(String.class, int.class, Instant.class)
+                    .newInstance(label, quality, expireDate);
+        } catch (Exception ex) {
+            System.err.println("Fehler beim Erstellen des Produkts für Label: " + label + " - " + ex.getMessage());
+            return null;
+        }
+    }
 }

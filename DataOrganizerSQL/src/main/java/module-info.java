@@ -1,4 +1,5 @@
 module DataOrganizerSQL {
+    exports de.superdupermarkt.enumerations;
     requires lombok;
     requires java.persistence;
     requires Products;
