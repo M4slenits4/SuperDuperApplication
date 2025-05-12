@@ -75,6 +75,15 @@ public abstract class Product {
     public abstract boolean isExpired(Instant today);
 
 
+    /**
+     * Creates a Product instance based on the provided label, quality, and expiration date.
+     *
+     * @param label The label of the product, used to determine the specific Product subclass to create. Must not be null.
+     * @param quality The quality of the product.
+     * @param expireDate The expiration date of the product.
+     * @return A new instance of a Product subclass, or null if an error occurs during instantiation
+     * @throws AssertionError if the productClass is null.
+     */
     public static Product create(String label, int quality, Instant expireDate) {
         try {
             Class<? extends Product> productClass = ProductTyp.getClassPathByLabel(label);
