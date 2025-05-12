@@ -1,6 +1,4 @@
-package de.superdupermarkt.NewProduct;
-
-import de.superdupermarkt.products.Product;
+package de.superdupermarkt.products;
 
 import java.time.Instant;
 

@@ -1,3 +1,0 @@
-module NewProduct {
-    requires Products;
-}
