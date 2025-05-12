@@ -51,10 +51,10 @@ public class Wine extends Product{
      * Updates the quality level of the wine if it has not yet reached the{@link #MAXIMUM_QUALITY_LEVEL}
      * and if the specified{@link #QUALITY_INCREASE_INTERVAL} has passed since the last quality increase.
      *
-     * @param today The current date and time.
+     * @param toDay The current date and time.
      */
     @Override
-    public void updateQualityLevel(Instant today) {
+    public void updateQualityLevel(Instant toDay) {
         if (dayOfIncreasingQuality == null) {
             dayOfIncreasingQuality = getExpireDate().plus(QUALITY_INCREASE_INTERVAL);
         }
@@ -85,11 +85,11 @@ public class Wine extends Product{
      * For this product type, the concept of expiration does not typically exist.
      * Therefore, this method always returns {@code false}.
      *
-     * @param today The current date and time.
+     * @param toDay The current date and time.
      * @return {@code false},  wine in this context does not expire.
      */
     @Override
-    public boolean isExpired(Instant today) {
+    public boolean isExpired(Instant toDay) {
         return false;
     }
 }
