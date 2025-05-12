@@ -15,5 +15,8 @@
         <module name="DataOrganizerSQL" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SuperDuper" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
