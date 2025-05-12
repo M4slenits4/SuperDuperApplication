@@ -1,10 +1,7 @@
 package de.superdupermarkt.worker;
 
 import de.superdupermarkt.csv.util.CSVProductReader;
-import de.superdupermarkt.services.ProductService;
-import de.superdupermarkt.util.ProductUtil;
 import de.superdupermarkt.products.Product;
-
 import java.io.File;
 import java.time.Duration;
 import java.time.Instant;

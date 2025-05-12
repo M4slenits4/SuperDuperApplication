@@ -3,7 +3,6 @@ package de.superdupermarkt.util;
 import de.superdupermarkt.entities.Product;
 import de.superdupermarkt.enumerations.ProductTyp;
 import de.superdupermarkt.services.ProductService;
-
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
