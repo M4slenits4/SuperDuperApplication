@@ -1,6 +1,6 @@
 # SuperDuperApplication
 
-Hallo Zusammen :)
+Hallo !
 
 Anbei paar kurze Infos über dieses Projekt.
 
@@ -33,6 +33,9 @@ Hat sich meiner Meinung nach am besten angeboten, da die Klassen Cheese, Wine un
 Data Transfer Object(DTO):
 Die Product-Entity transportiert daten zwischen der DB und der Service-Schicht. Meiner Meinung nach hat es sich angeboten, da man speziefische Informationen heran ziehen kann ohne z.B. immer alle Informationen auf einmal zu Laden.
 
+
+Bis auf den letzen Punkt habe ich alles erledigt. 
+Ich bin mit Spring noch nicht so bewandert, ich habe mir vieles dazu angeschaut und durchgelesen und möchte das definitv in Zukunft ändern.
 
 
 
