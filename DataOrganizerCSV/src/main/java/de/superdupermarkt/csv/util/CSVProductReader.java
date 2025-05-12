@@ -2,7 +2,6 @@ package de.superdupermarkt.csv.util;
 
 import com.opencsv.CSVReaderHeaderAware;
 import de.superdupermarkt.products.Product;
-
 import java.io.FileReader;
 import java.time.Instant;
 import java.util.ArrayList;
