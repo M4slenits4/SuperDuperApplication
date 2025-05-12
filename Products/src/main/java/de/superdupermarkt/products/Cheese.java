@@ -44,11 +44,11 @@ public class Cheese extends Product {
      * Updates the quality level of the cheese by decreasing it by the
      * {@link #DAILY_QUALITY_DECREMENT}each time this method is called.
      *
-     * @param toDay The current date and time (not directly used in this implementation
+     * @param today The current date and time (not directly used in this implementation
      * but inherited from the {@link Product} interface).
      */
     @Override
-    public void updateQualityLevel(Instant toDay) {
+    public void updateQualityLevel(Instant today) {
             setQuality(getQuality() - DAILY_QUALITY_DECREMENT);
     }
 
@@ -66,12 +66,12 @@ public class Cheese extends Product {
      * {@inheritDoc}
      * Checks if the cheese is expired based on its expiration date.
      *
-     * @param toDay The current date and time.
+     * @param today The current date and time.
      * @return {@code true} if the cheese's expiration date is before the {@code today}'s
      * date, indicating that it is expired; {@code false} otherwise.
      */
     @Override
-    public boolean isExpired(Instant toDay) {
-        return getExpireDate().isBefore(toDay);
+    public boolean isExpired(Instant today) {
+        return getExpireDate().isBefore(today);
     }
 }

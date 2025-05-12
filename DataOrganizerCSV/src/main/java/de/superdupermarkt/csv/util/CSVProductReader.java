@@ -50,7 +50,7 @@ public class CSVProductReader {
         try (CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new FileReader(path))) {
             Map<String, String> line;
             while ((line = reader.readMap()) != null) {
-                String productTyp = line.get("ProductTyp");
+                String productTyp = line.get("Produkttyp");
                 Class<? extends Product> productClass = PRODUCT_TYPES.get(productTyp);
 
                 if (productClass != null) {

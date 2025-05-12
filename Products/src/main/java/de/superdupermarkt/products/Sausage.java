@@ -49,11 +49,11 @@ public class Sausage extends Product {
      * Updates the quality level of the sausage based on its current quality.
      * If the quality is above the tipping point, it degrades slowly; otherwise, it degrades faster.
      *
-     * @param toDay The current date and time (not directly used in this implementation
+     * @param today The current date and time (not directly used in this implementation
      * but inherited from the {@link Product} interface).
      */
     @Override
-    public void updateQualityLevel(Instant toDay) {
+    public void updateQualityLevel(Instant today) {
         if (getQuality() > QUALITY_TIPPING_POINT) {
             setQuality(getQuality() - QUALITY_DECREMENT_WITH_GOOD_QUALITY);
         } else {
@@ -79,12 +79,12 @@ public class Sausage extends Product {
      * {@inheritDoc}
      * Checks if the sausage is expired based on its expiration date.
      *
-     * @param toDay The current date and time.
+     * @param today The current date and time.
      * @return {@code true} if the cheese's expiration date is before the {@code today}'s
      * date, indicating that it is expired; {@code false} otherwise.
      */
     @Override
-    public boolean isExpired(Instant toDay) {
-        return getExpireDate().isBefore(toDay);
+    public boolean isExpired(Instant today) {
+        return getExpireDate().isBefore(today);
     }
 }

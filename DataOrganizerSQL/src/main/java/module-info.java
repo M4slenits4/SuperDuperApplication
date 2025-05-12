@@ -5,5 +5,4 @@ module DataOrganizerSQL {
     requires spring.context;
     requires spring.data.jpa;
     requires spring.beans;
-
 }

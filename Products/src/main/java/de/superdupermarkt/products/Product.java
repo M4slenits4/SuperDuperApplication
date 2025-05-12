@@ -54,9 +54,9 @@ public abstract class Product {
     /**
      * Update the quality level for the product. Depends on the product.
      *
-     * @param toDay The current date and time.
+     * @param today The current date and time.
      */
-    public abstract void updateQualityLevel(Instant toDay);
+    public abstract void updateQualityLevel(Instant today);
 
     /**
      * Update the price if there are changes  for the product.
@@ -66,8 +66,8 @@ public abstract class Product {
     /**
      * Checks for the expiry date of the product
      *
-     * @param toDay The current date and time.
+     * @param today The current date and time.
      * @return {@code true} if the product is expired, otherwise {@code false}
      */
-    public abstract boolean isExpired(Instant toDay);
+    public abstract boolean isExpired(Instant today);
 }
