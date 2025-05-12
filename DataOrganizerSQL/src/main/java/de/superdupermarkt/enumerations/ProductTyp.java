@@ -22,4 +22,19 @@ public enum ProductTyp {
     /** The fully qualified class path of the Java class that implements this product type. */
     private final String classPath;
 
+    /**
+     * Retrieves the fully qualified class path associated with the given product type label.
+     *
+     * @param label The label of the product type to search.
+     * @return The fully qualified class path of the corresponding product type,
+     * or {@code null} if no product type with the given label is found.
+     */
+    public static String getClassPathByLabel(String label) {
+        for (ProductTyp type : ProductTyp.values()) {
+            if (type.bezeichnung.equalsIgnoreCase(label)) {
+                return type.classPath;
+            }
+        }
+        return null;
+    }
 }
