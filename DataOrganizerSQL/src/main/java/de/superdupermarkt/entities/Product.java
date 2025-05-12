@@ -50,11 +50,4 @@ public class Product {
      */
     @Column(name = "verfallsdatum")
     private Instant expireDate;
-
-    /**
-     * The price of the product.
-     * This field is mapped to the "preis" column.
-     */
-    @Column(name = "preis")
-    private double price;
 }
