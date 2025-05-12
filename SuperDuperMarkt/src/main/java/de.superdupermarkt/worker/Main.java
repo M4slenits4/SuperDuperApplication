@@ -1,6 +1,8 @@
 package de.superdupermarkt.worker;
 
 import de.superdupermarkt.csv.util.CSVProductReader;
+import de.superdupermarkt.services.ProductService;
+import de.superdupermarkt.util.ProductUtil;
 import de.superdupermarkt.products.Product;
 
 import java.io.File;
@@ -26,6 +28,11 @@ public class Main {
         // read in product types and product list
         CSVProductReader.getProductTypesFromCSV(FILE_NAME_PRODUCT_TYPES);
         List<Product> productList = CSVProductReader.getProductDataFromCSV(FILE_NAME_PRODUCT_DATA);
+
+        // Als beispiel für die entity über sql anstatt über CSV. Funktioniert so natütlich nicht :)
+        // ProductUtil productUtil = new ProductUtil(new ProductService());
+        // List<Product> productList = ProductUtil.getProductDataFromSQL();
+
         if (productList.isEmpty()) {
             System.out.println(" Produkt-Liste ist leer !");
         }

@@ -28,7 +28,7 @@ public class ProductUtil {
      * the product data from the database.  Returns an empty list if no
      * products are found.
      */
-    private List<de.superdupermarkt.products.Product> getProductDataFromSQL() {
+    public List<de.superdupermarkt.products.Product> getProductDataFromSQL() {
         List<Product> allProducts = productService.getAllProducts();
         List<de.superdupermarkt.products.Product> productList = new ArrayList<>();
 
@@ -50,7 +50,7 @@ public class ProductUtil {
      * @return A new instance of a Product subclass, or null if an error occurs during instantiation
      * @throws AssertionError if the productClass is null.
      */
-    public static de.superdupermarkt.products.Product createProduct(String label, int quality, Instant expireDate) {
+    private static de.superdupermarkt.products.Product createProduct(String label, int quality, Instant expireDate) {
         try {
             Class<? extends de.superdupermarkt.products.Product> productClass = ProductTyp.getClassByLabel(label);
             assert productClass != null;
