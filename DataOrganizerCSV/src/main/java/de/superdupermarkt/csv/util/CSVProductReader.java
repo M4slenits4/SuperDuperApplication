@@ -19,22 +19,20 @@ public class CSVProductReader {
     private static final List<Product> PRODUCT_LIST = new ArrayList<>();
     /** A static map that associates the product type from the CSV with the correct {@link Product}.*/
     private static final Map<String, Class<? extends Product>> PRODUCT_TYPES = new HashMap<>();
-    /** The file path to the CSV file containing the product types. */
-    private static final String FILE_PATH_PRODUCT_TYPES = "src\\main\\java\\de\\superdupermarkt\\files\\ProductTypes.csv";
-    /** The file path to the CSV file containing the product data. */
-    public static final String FILE_PATH_PRODUCT_DATA = "src\\main\\java\\de\\superdupermarkt\\files\\ProductData.csv";
 
     /**
      * Reads product type information from a CSV file.
      * Each row in the CSV two columns: "Typ" and "Klassenname" representing the fully qualified name.
      * For each row, this method load the Java class specified in the"Klassenname" column.
      * If the class is successfully loaded, its {@code Class} object is stored in the {@link #PRODUCT_TYPES} map.
+     *
+     * @param path The path to the CSV file to read.
      */
-    public static void readProductTypesCSV() {
-        try (CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new FileReader(FILE_PATH_PRODUCT_TYPES))) {
+    public static void readProductTypesCSV(String path) {
+        try (CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new FileReader(path))) {
             Map<String, String> line;
             while ((line = reader.readMap()) != null) {
-                PRODUCT_TYPES.put(line.get("Typ"), (Class<? extends Product>) Class.forName(line.get("Klassepfad")));
+                PRODUCT_TYPES.put(line.get("Typ"), (Class<? extends Product>) Class.forName(line.get("Klassenpfad")));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
