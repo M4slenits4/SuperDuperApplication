@@ -61,7 +61,7 @@ public class Wine extends Product{
         // Check for maximum quality level.
         if (getQuality() < MAXIMUM_QUALITY_LEVEL) {
             // Check if the ten days have passed.
-            if (today.isAfter(dayOfIncreasingQuality)) {
+            if (toDay.isAfter(dayOfIncreasingQuality)) {
                 setQuality(getQuality() + QUALITY_INCREMENT);
                 dayOfIncreasingQuality = dayOfIncreasingQuality.plus(QUALITY_INCREASE_INTERVAL);
             }
