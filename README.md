@@ -35,8 +35,7 @@ Die Product-Entity transportiert daten zwischen der DB und der Service-Schicht. 
 
 
 Bis auf den letzen Punkt habe ich alles erledigt. 
-Ich bin mit Spring noch nicht so bewandert, ich habe mir vieles dazu angeschaut und durchgelesen und möchte das definitv in Zukunft ändern.
-
+Ich bin mit Spring noch nicht so bewandert, aber möchte das in Zukunft definitiv ändern.
 
 
 
